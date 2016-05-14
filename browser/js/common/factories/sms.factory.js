@@ -1,4 +1,6 @@
 app.factory('SmsFactory', function($http){
+	
+
 	var SmsFactory = {};
 
 	SmsFactory.sendMsg = function(){
@@ -13,6 +15,10 @@ app.factory('SmsFactory', function($http){
 		.then(function(res){
 			return res.data;
 		})
+	}
+
+	SmsFactory.logMe = function(){
+		console.log("Hi, the settings are:")
 	}
 
 	return SmsFactory;

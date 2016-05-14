@@ -3,10 +3,15 @@
 app.config(function($stateProvider){
 	$stateProvider.state('sms', {
 		url: '/sms',
-		templateUrl: 'js/sms/sms.html'
-	})
-})
+		templateUrl: 'js/sms/sms.html',
+		controller: 'SmsController'
+	});
+});
 
-app.controller('TextController', function($scope, TextFactory){
+app.controller('SmsController', function($scope, SmsFactory){
+	$scope.logger = function(){
+		console.log($scope.sms)
 
+		//SmsFactory.logMe();
+	}
 });
