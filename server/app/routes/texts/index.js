@@ -13,6 +13,13 @@ router.get('/', function(req,res){
 	});
 });
 
+router.get('/getOne/:msgId', function(req,res){
+	Message.find({_id: req.params.msgId})
+	.then(function(messages){
+		res.send(messages);
+	});
+});
+
 router.post('/', function(req,res){
 	var message = new Message({
 		from: req.body.user,
