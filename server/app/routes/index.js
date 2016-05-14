@@ -4,7 +4,7 @@ module.exports = router;
 
 router.use('/members', require('./members'));
 
-router.use('/texts', require('./texts'));
+router.use('/sms', require('./sms'));
 
 // Make sure this is after all of
 // the registered routes!

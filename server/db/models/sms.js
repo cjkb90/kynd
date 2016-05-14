@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var messageSchema = new mongoose.Schema({
+var smsSchema = new mongoose.Schema({
 	from: {type: mongoose.Schema.Types.ObjectId, ref:'User'},
 	toEmail: {type: String},
 	toPhone: {type: Number},
@@ -9,4 +9,4 @@ var messageSchema = new mongoose.Schema({
 	date: {type: Date, default: Date.now}
 });
 
-mongoose.model('Message', messageSchema);
+mongoose.model('Sms', smsSchema);
