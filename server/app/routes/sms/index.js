@@ -39,16 +39,16 @@ router.post('/', function(req,res){
 		        // "responseData" is a JavaScript object containing data received from Twilio.
 		        // A sample response from sending an SMS message is here (click "JSON" to see how the data appears in JavaScript):
 		        // http://www.twilio.com/docs/api/rest/sending-sms#example-1
-		        console.log(responseData);
+		        //console.log(responseData);
+		        res.send(msg);
 		    }
 		    else{
-		    	res.send("ERROR:",err)
+		    	res.send(err)
 		    }
 		});
-		res.send(msg);
 	})
 	.catch(function(err){
-		res.send("ERROR:", err);
+		res.status(500).send({err: err.message});
 	});
 });
 

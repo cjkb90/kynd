@@ -4,7 +4,7 @@ app.factory('SmsFactory', function($http){
 	var SmsFactory = {};
 
 	SmsFactory.sendMsg = function(msg){
-		$http.post('/api/sms', msg)
+		return $http.post('/api/sms', msg)
 		.then(function(res){
 			return res.data;
 		})

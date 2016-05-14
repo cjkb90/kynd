@@ -8,7 +8,7 @@ app.config(function($stateProvider){
 	});
 });
 
-app.controller('SmsController', function($scope, SmsFactory, AuthService){
+app.controller('SmsController', function($scope, $state, SmsFactory, AuthService){
 	$scope.logger = function(){
 		console.log($scope.sms)
 	}
@@ -17,8 +17,13 @@ app.controller('SmsController', function($scope, SmsFactory, AuthService){
 		.then(function(user){
 			msg.from = user._id
 		});
-		SmsFactory.sendMsg(msg);
+		return SmsFactory.sendMsg(msg)
+		.then(function(){
+			$state.go('home')
+		})
+		.catch(function(err){
+			window.alert(err.data.err);
+			console.log(err);
+		});
 	}
-
-
 });
