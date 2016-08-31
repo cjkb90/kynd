@@ -3,7 +3,7 @@ var router = require('express').Router();
 var mongoose = require('mongoose');
 var Sms = mongoose.model('Sms');
 var User = mongoose.model('User');
-var twilioConfig = require('./../../../../twilioConfig.js')
+var twilioConfig = require('./../../../../twilioConfig.js');
 module.exports = router;
 
 router.get('/', function(req,res){
